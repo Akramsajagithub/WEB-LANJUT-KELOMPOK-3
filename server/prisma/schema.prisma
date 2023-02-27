@@ -1,0 +1,22 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+model barang_bekas {
+  id Int    @id @default(autoincrement())
+  nama_barang     String @db.VarChar(100)
+  kondisi     String @db.VarChar(100)
+  deskripsi       String @db.VarChar(250)
+  harga           Int
+}
+model skin_MLBB {
+  id_       Int    @id @default(autoincrement())
+  nama_hero String @db.VarChar(100)
+  nama_skin String @db.VarChar(100)
+  type      String @db.VarChar(100)
+  harga     Int
+}
